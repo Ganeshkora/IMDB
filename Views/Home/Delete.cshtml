@@ -1,0 +1,30 @@
+﻿@model IMDB.com.Models.Movy
+
+<h2>Delete Movie</h2>
+@using (Html.BeginForm("delete", "home", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a=>a.MovieID)
+    <div class="form-group">
+        <label>Movie Name</label>
+        <p>@Model.MovieName</p>
+    </div>
+    <div class="form-group">
+        <label>Cast</label>
+        <p>@Model.Cast</p>
+    </div>
+    <div class="form-group">
+        <label>Director</label>
+        <p>@Model.Director</p>
+    </div>
+    <div class="form-group">
+        <label>Producer</label>
+        <p>@Model.Producer</p>
+    </div>
+    <div class="form-group">
+        <label>Release Date</label>
+        <p>@Model.RDate</p>
+    </div>
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+}

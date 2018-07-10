@@ -1,0 +1,38 @@
+﻿@model IMDB.com.Models.Movy
+
+<h2>Save</h2>
+@using (Html.BeginForm("save", "home", FormMethod.Post,new { id= "popupForm" }))
+{
+    if(Model !=null && Model.MovieID>0)
+    {
+        @Html.HiddenFor(a=>a.MovieID)
+    }
+    <div class="form-group">
+        <label>Movie Name</label>
+        @Html.TextBoxFor(a=>a.MovieName,new { @class = "form-control"})
+        @Html.ValidationMessageFor(a=>a.MovieName)
+    </div>
+    <div class="form-group">
+        <label>Cast</label>
+        @Html.TextBoxFor(a => a.Cast, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Cast)
+    </div>
+    <div class="form-group">
+        <label>Director</label>
+        @Html.TextBoxFor(a => a.Director, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Director)
+    </div>
+    <div class="form-group">
+        <label>Producer</label>
+        @Html.TextBoxFor(a => a.Producer, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.Producer)
+    </div>
+    <div class="form-group">
+        <label>Release Date</label>
+        @Html.TextBoxFor(a => a.RDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.RDate)
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+}
